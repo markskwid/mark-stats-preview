@@ -44,15 +44,27 @@ p {
   font-family: "Inter", sans-serif;
 }
 
-.bottom-text {
+ul {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 3em 0 0 0;
+}
+
+li {
   color: var(--White);
   font-weight: bold;
   font-size: 1.7rem;
   line-height: 1.2em;
   margin-right: auto;
+  margin: auto;
+  list-style: none;
+  display: inline-block;
+  width: 32%;
 }
 
-.bottom-text span {
+li span {
   margin-top: 0;
   display: block;
   color: var(--SlightlytransparentParag);
@@ -66,7 +78,7 @@ p {
   h1 {
     font-family: "Inter", sans-serif;
     font-weight: bold;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     color: var(--White);
   }
 
@@ -75,30 +87,30 @@ p {
   }
 
   p {
-    font-size: 1rem;
+    font-size: .95rem;
     max-width: 100%;
     color: var(--SlightlytransparentParag);
     line-height: 1.5em;
     font-family: "Inter", sans-serif;
   }
 
-  .bottom-text {
+  li {
     color: var(--White);
     font-weight: bold;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     line-height: 1.2em;
     width: 100%;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
 
-  .bottom-text span {
+  li span {
     margin-top: 0;
     display: block;
     color: var(--SlightlytransparentParag);
     font-weight: normal;
     text-transform: uppercase;
     font-family: "Lexend Deca", sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -119,7 +131,9 @@ main .container {
   display: flex;
   background: var(--Darkdesaturatedblue);
   width: 1200px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 10px;
 }
 
@@ -131,19 +145,20 @@ main .container .info-container {
   padding: 3em;
 }
 
-main .container .image-container {
+main .container picture {
   padding: 0;
-  background: linear-gradient(rgba(118, 0, 187, 0.5), rgba(118, 0, 187, 0.5)),
-    url("./images/image-header-desktop.jpg") no-repeat center;
-  background-size: cover;
   border-radius: 0 10px 10px 0;
-  
+  display: flex;
+  background-color: rgb(142, 53, 194);
 }
 
 main .container .col img {
   width: 100%;
   max-width: 100%;
   margin: 0;
+  border-radius: inherit;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
 }
 
 main .container .bottom-text-container {
@@ -152,22 +167,24 @@ main .container .bottom-text-container {
   padding: 1em 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 200px) and (max-width: 600px) {
   body {
     display: flex;
     min-height: 100vh;
     padding: 1em;
-    justify-content: center;
     align-items: center;
+    width: 100%;
+    justify-content: center;
   }
 
   main .container {
     display: flex;
     flex-direction: column-reverse;
     background: var(--Darkdesaturatedblue);
-    width: 320px;
-    max-width: 320px;
+    width: 95%;
+    max-width: 340px;
     border-radius: 10px;
+    margin: 0 auto;
   }
 
   main .container .col {
@@ -179,22 +196,30 @@ main .container .bottom-text-container {
     text-align: center;
   }
 
-  main .container .image-container {
+  main .container picture {
     padding: 0;
-    height: 15rem;
-    background: linear-gradient(rgba(118, 0, 187, 0.5), rgba(118, 0, 187, 0.5)),
-      url("./images/image-header-mobile.jpg") no-repeat center;
-    background-size: cover;
     border-radius: 10px 10px 0 0;
+    display: flex;
+    background-color: rgb(142, 53, 194);
   }
 
-  main .container .bottom-text-container {
+  main .container .col img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: inherit;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+  }
+
+  main .container ul {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: auto;
     max-width: 100%;
     text-align: center;
-    padding: 0;
+    justify-content: space-around;
+    padding: 2em 0 0 0;
   }
 }
